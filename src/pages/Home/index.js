@@ -20,8 +20,8 @@ export default function Home() {
       <div className="lista-filmes">
         { filmes.map((filme) => {
           return (
-            <Link to='/'>
-              <article key={ filme.id } className="card">
+            <Link to={ `/filme/${ filme.id }` } key={ filme.id }>
+              <article className="card">
                 <div className="div-title">
                   <h2>{ filme.nome }</h2>
                 </div>
