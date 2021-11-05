@@ -7,6 +7,13 @@
 .filmes-favoritos h1 {
   margin-bottom: 16px;
   padding: 0 16px;
+  text-align: center;
+}
+
+.filmes-favoritos span {
+  display: block;
+  text-align: center;
+  padding: 0 16px;
 }
 
 .filmes-favoritos li {

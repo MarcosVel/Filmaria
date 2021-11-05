@@ -26,6 +26,8 @@ export default function Favoritos() {
     <div className="filmes-favoritos">
       <h1>Meus Favoritos</h1>
 
+      { filmes.length === 0 && <span>Você não possui nenhum filme salvo 🙁</span> }
+
       <ul>
         { filmes.map((item) => (
           <li key={ item.id }>
