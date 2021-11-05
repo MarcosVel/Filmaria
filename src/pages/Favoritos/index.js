@@ -12,6 +12,16 @@ export default function Favoritos() {
 
   }, []);
 
+  function handleDelete(item_id) {
+    let filtroFilmes = filmes.filter((item) => {
+      return (item.id !== item_id)
+    })
+
+    // Atualizando lista e localStorage com nova lista após retirar o selecionado
+    setFilmes(filtroFilmes);
+    localStorage.setItem('filmes', JSON.stringify(filtroFilmes));
+  }
+
   return (
     <div className="filmes-favoritos">
       <h1>Meus Favoritos</h1>
@@ -25,7 +35,7 @@ export default function Favoritos() {
             </div>
             <div>
               <Link to={ `/filme/${ item.id }` }><FiEye size={ 25 } color='#2146db' /></Link>
-              <Link><FiTrash2 size={ 25 } color='#ed1a1a' /></Link>
+              <button onClick={ () => handleDelete(item.id) }><FiTrash2 size={ 25 } color='#ed1a1a' /></button>
             </div>
           </li>
         )) }
