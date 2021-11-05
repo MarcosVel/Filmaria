@@ -1,7 +1,17 @@
+.filme-detalhes {
+  width: 100%;
+  max-width: 900px;
+}
+
 .filme-info {
   display: flex;
   flex-direction: column;
-  max-width: 900px;
+  padding: 16px;
+  padding-top: 40px;
+}
+
+.filme-info h1 {
+  margin-bottom: 16px;
 }
 
 .filme-info img {
@@ -9,7 +19,8 @@
 }
 
 .filme-info h3 {
-  margin-top: 21px;
+  margin-top: 24px;
+  margin-bottom: 12px;
 }
 
 .filme-info button {
