@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { FiEye, FiTrash2 } from "react-icons/fi";
 import './styles.css';
+import { toast } from 'react-toastify';
 
 export default function Favoritos() {
   const [ filmes, setFilmes ] = useState([]);
@@ -20,6 +21,7 @@ export default function Favoritos() {
     // Atualizando lista e localStorage com nova lista após retirar o selecionado
     setFilmes(filtroFilmes);
     localStorage.setItem('filmes', JSON.stringify(filtroFilmes));
+    toast.success('Filme excluído com sucesso!')
   }
 
   return (

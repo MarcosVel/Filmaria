@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import api from '../../services/api';
 import './styles.css';
 
@@ -43,13 +44,13 @@ export default function Filme() {
     const hasFilme = filmesSalvos.some((filmeSalvo) => filmeSalvo.id === filme.id) // some percorre lista e procura o mesmo id
 
     if (hasFilme) {
-      alert('Esse filme já está salvo');
+      toast.info('Esse filme já está salvo');
       return;
     }
 
     filmesSalvos.push(filme);
     localStorage.setItem('filmes', JSON.stringify(filmesSalvos));
-    alert('Filme salvo com sucesso!');
+    toast.success('Filme salvo com sucesso!');
   }
 
   if (loading) {
